@@ -1,0 +1,211 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #fff1e6;
+  --bg-deep: #f0d8c4;
+  --ink: #1a120c;
+  --ink-soft: #5c4a3d;
+  --chili: #c41e12;
+  --chili-deep: #8f1209;
+  --aji: #e6a01a;
+  --flame: #f05a1a;
+  --cream: #fff8f2;
+  --line: rgba(26, 18, 12, 0.12);
+  --surface: rgba(255, 248, 242, 0.78);
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-deep: var(--bg-deep);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-chili: var(--chili);
+  --color-chili-deep: var(--chili-deep);
+  --color-aji: var(--aji);
+  --color-flame: var(--flame);
+  --color-cream: var(--cream);
+  --color-line: var(--line);
+  --color-surface: var(--surface);
+  --font-display: var(--font-bricolage);
+  --font-body: var(--font-figtree);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-figtree), system-ui, sans-serif;
+  overflow-x: clip;
+}
+
+body::before {
+  content: "";
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+::selection {
+  background: color-mix(in srgb, var(--aji) 55%, white);
+  color: var(--ink);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.font-display {
+  font-family: var(--font-bricolage), system-ui, sans-serif;
+}
+
+.flame-wash {
+  background:
+    radial-gradient(ellipse 80% 60% at 15% 20%, rgba(240, 90, 26, 0.18), transparent 55%),
+    radial-gradient(ellipse 70% 50% at 85% 10%, rgba(230, 160, 26, 0.2), transparent 50%),
+    radial-gradient(ellipse 60% 40% at 70% 90%, rgba(196, 30, 18, 0.1), transparent 55%),
+    linear-gradient(180deg, #f7efe7 0%, #f0e0d2 48%, #ead4c2 100%);
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes soft-zoom {
+  from {
+    transform: scale(1.08);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes ember {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.45;
+  }
+  50% {
+    transform: translateY(-10px) scale(1.05);
+    opacity: 0.75;
+  }
+}
+
+@keyframes underline-draw {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.animate-rise {
+  animation: rise-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-rise-delay-1 {
+  animation: rise-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.12s both;
+}
+
+.animate-rise-delay-2 {
+  animation: rise-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.24s both;
+}
+
+.animate-rise-delay-3 {
+  animation: rise-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.36s both;
+}
+
+.animate-soft-zoom {
+  animation: soft-zoom 1.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-ember {
+  animation: ember 4.5s ease-in-out infinite;
+}
+
+.menu-row {
+  border-bottom: 1px solid var(--line);
+  transition: background-color 0.25s ease, padding-left 0.25s ease;
+}
+
+.menu-row:hover {
+  background: color-mix(in srgb, var(--cream) 70%, transparent);
+  padding-left: 0.35rem;
+}
+
+.cta-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: var(--chili);
+  color: var(--cream);
+  padding: 0.9rem 1.45rem;
+  border-radius: 0.2rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: transform 0.25s ease, background-color 0.25s ease;
+}
+
+.cta-primary:hover {
+  background: var(--chili-deep);
+  transform: translateY(-2px);
+}
+
+.cta-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: 1.5px solid var(--ink);
+  color: var(--ink);
+  padding: 0.85rem 1.4rem;
+  border-radius: 0.2rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  background: transparent;
+  transition: transform 0.25s ease, background-color 0.25s ease, color 0.25s ease;
+}
+
+.cta-secondary:hover {
+  background: var(--ink);
+  color: var(--cream);
+  transform: translateY(-2px);
+}
+
+.section-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--chili);
+}
+
+.reveal-line {
+  display: block;
+  height: 2px;
+  width: 3.5rem;
+  background: linear-gradient(90deg, var(--chili), var(--aji));
+  transform-origin: left;
+  animation: underline-draw 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.4s both;
+}
