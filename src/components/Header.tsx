@@ -43,9 +43,10 @@ export function Header() {
           </span>
           <span className="min-w-0">
             <span className="font-display block truncate text-[0.95rem] font-extrabold leading-none tracking-tight text-ink sm:text-[1.05rem]">
-              Pacheco Rotisserie
+              Pacheco
+              <span className="hidden min-[380px]:inline"> Rotisserie</span>
             </span>
-            <span className="mt-1 block truncate text-[0.62rem] font-semibold tracking-[0.14em] text-ink-soft uppercase">
+            <span className="mt-1 hidden truncate text-[0.62rem] font-semibold tracking-[0.14em] text-ink-soft uppercase sm:block">
               Peruvian Inspired Cuisine
             </span>
           </span>
@@ -81,7 +82,10 @@ export function Header() {
               <path d="M14 8h3V4h-3c-2.8 0-5 2.2-5 5v2H7v4h2v7h4v-7h3l1-4h-4V9c0-.6.4-1 1-1z" />
             </svg>
           </a>
-          <a href={phoneHref} className="cta-primary !px-3.5 !py-2.5 text-sm sm:!px-4">
+          <a
+            href={phoneHref}
+            className="cta-primary hidden !px-3 !py-2 text-sm sm:inline-flex sm:!px-4"
+          >
             Order Now
           </a>
           <button
@@ -111,8 +115,8 @@ export function Header() {
       </div>
 
       {open && (
-        <div className="border-t border-black/10 bg-white lg:hidden">
-          <div className="mx-auto flex max-w-6xl flex-col gap-1 px-4 py-5 sm:px-6">
+        <div className="fixed inset-x-0 top-[4.25rem] bottom-0 z-40 overflow-y-auto border-t border-black/10 bg-white sm:top-[4.75rem] lg:hidden">
+          <div className="mx-auto flex max-w-6xl flex-col gap-1 px-4 py-5 pb-28 sm:px-6">
             {links.map((link) => (
               <a
                 key={link.href}
@@ -141,7 +145,7 @@ export function Header() {
             </a>
             <a
               href={phoneHref}
-              className="cta-primary mt-4 w-full"
+              className="cta-primary mt-4 inline-flex w-full"
               onClick={() => setOpen(false)}
             >
               Call to Order
@@ -149,6 +153,17 @@ export function Header() {
           </div>
         </div>
       )}
+
+      <div className="fixed inset-x-0 bottom-0 z-30 border-t border-black/10 bg-white px-4 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] sm:hidden">
+        <div className="grid grid-cols-2 gap-2">
+          <a href="#menu" className="cta-secondary inline-flex w-full !px-3 !py-3 text-sm">
+            Menu
+          </a>
+          <a href={phoneHref} className="cta-primary inline-flex w-full !px-3 !py-3 text-sm">
+            Call to Order
+          </a>
+        </div>
+      </div>
     </header>
   );
 }

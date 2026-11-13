@@ -17,7 +17,7 @@ const shots = [
 
 export function Gallery() {
   return (
-    <section id="gallery" className="bg-white px-5 py-20 sm:px-8 sm:py-28">
+    <section id="gallery" className="bg-white px-5 py-14 sm:px-8 sm:py-20 lg:py-28">
       <div className="mx-auto max-w-6xl">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
@@ -39,7 +39,7 @@ export function Gallery() {
         <div className="mt-12 grid gap-8 sm:grid-cols-2">
           {shots.map((shot) => (
             <figure key={shot.src}>
-              <div className="relative aspect-[3/4] overflow-hidden bg-neutral-100">
+              <div className="relative aspect-[4/3] overflow-hidden bg-neutral-100 sm:aspect-[3/4]">
                 <Image
                   src={shot.src}
                   alt={shot.alt}

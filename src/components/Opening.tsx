@@ -4,7 +4,7 @@ export function Opening() {
   return (
     <section
       id="opening"
-      className="relative overflow-hidden bg-bg px-5 py-20 sm:px-8 sm:py-28"
+      className="relative overflow-hidden bg-bg px-5 py-14 sm:px-8 sm:py-20 lg:py-28"
     >
       <div className="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-[0.9fr_1.1fr]">
         <div className="relative mx-auto w-full max-w-md overflow-hidden bg-cream lg:mx-0">

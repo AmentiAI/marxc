@@ -3,7 +3,7 @@ import { menu } from "@/data/menu";
 
 export function MenuSection() {
   return (
-    <section id="menu" className="relative bg-bg px-5 py-20 sm:px-8 sm:py-28">
+    <section id="menu" className="relative bg-bg px-5 py-14 sm:px-8 sm:py-20 lg:py-28">
       <div className="mx-auto max-w-6xl">
         <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-2xl">
@@ -30,7 +30,7 @@ export function MenuSection() {
           </div>
         </div>
 
-        <div className="mt-14 grid gap-12 lg:grid-cols-2 lg:gap-x-16">
+        <div className="mt-10 grid gap-10 sm:mt-14 lg:grid-cols-2 lg:gap-x-16">
           {menu.map((section) => (
             <div key={section.title}>
               <h3 className="font-display text-2xl font-bold tracking-tight text-chili sm:text-3xl">
@@ -39,11 +39,11 @@ export function MenuSection() {
               <ul className="mt-4">
                 {section.items.map((item) => (
                   <li key={item.name} className="menu-row py-4">
-                    <div className="flex items-baseline justify-between gap-4">
-                      <h4 className="font-display text-lg font-semibold tracking-tight sm:text-xl">
+                    <div className="flex items-baseline justify-between gap-3">
+                      <h4 className="min-w-0 font-display text-lg font-semibold tracking-tight sm:text-xl">
                         {item.name}
                       </h4>
-                      <span className="shrink-0 font-display text-lg font-bold text-chili">
+                      <span className="shrink-0 font-display text-lg font-bold whitespace-nowrap text-chili">
                         ${item.price}
                       </span>
                     </div>

@@ -3,7 +3,7 @@ import { phone, phoneHref } from "@/data/menu";
 
 export function Footer() {
   return (
-    <footer className="border-t border-line bg-bg px-5 py-12 sm:px-8">
+    <footer className="border-t border-line bg-bg px-5 pt-12 pb-28 sm:px-8 sm:pb-12">
       <div className="mx-auto flex max-w-6xl flex-col gap-8 sm:flex-row sm:items-center sm:justify-between">
         <div className="flex items-center gap-3">
           <span className="relative h-14 w-14 overflow-hidden rounded-full bg-cream ring-1 ring-line">

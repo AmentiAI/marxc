@@ -3,7 +3,7 @@ import { address, hours, phone, phoneHref, website } from "@/data/menu";
 
 export function Visit() {
   return (
-    <section id="visit" className="bg-bg-deep px-5 py-20 sm:px-8 sm:py-28">
+    <section id="visit" className="bg-bg-deep px-5 py-14 sm:px-8 sm:py-20 lg:py-28">
       <div className="mx-auto max-w-6xl">
         <p className="section-label">Visit</p>
         <span className="reveal-line mt-4" />
@@ -49,15 +49,15 @@ export function Visit() {
               </div>
             </div>
 
-            <div className="mt-10 flex flex-wrap gap-3">
-              <a href={phoneHref} className="cta-primary">
+            <div className="mt-8 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:flex-wrap">
+              <a href={phoneHref} className="cta-primary inline-flex w-full sm:w-auto">
                 Call {phone}
               </a>
               <a
                 href="https://maps.google.com/?q=87+Oak+St+Westerly+RI"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="cta-secondary"
+                className="cta-secondary inline-flex w-full sm:w-auto"
               >
                 Get Directions
               </a>

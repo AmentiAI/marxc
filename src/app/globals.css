@@ -38,6 +38,10 @@ html {
   scroll-behavior: smooth;
 }
 
+section[id] {
+  scroll-margin-top: 4.75rem;
+}
+
 body {
   margin: 0;
   background: var(--bg);
@@ -148,13 +152,19 @@ a {
   transition: background-color 0.25s ease, padding-left 0.25s ease;
 }
 
-.menu-row:hover {
-  background: color-mix(in srgb, var(--cream) 70%, transparent);
-  padding-left: 0.35rem;
+@media (hover: hover) {
+  .menu-row:hover {
+    background: color-mix(in srgb, var(--cream) 70%, transparent);
+    padding-left: 0.35rem;
+  }
+
+  .cta-primary:hover,
+  .cta-secondary:hover {
+    transform: translateY(-2px);
+  }
 }
 
 .cta-primary {
-  display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
@@ -164,16 +174,15 @@ a {
   border-radius: 0.2rem;
   font-weight: 600;
   letter-spacing: 0.02em;
+  white-space: nowrap;
   transition: transform 0.25s ease, background-color 0.25s ease;
 }
 
 .cta-primary:hover {
   background: var(--chili-deep);
-  transform: translateY(-2px);
 }
 
 .cta-secondary {
-  display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
@@ -184,13 +193,13 @@ a {
   font-weight: 600;
   letter-spacing: 0.02em;
   background: transparent;
+  white-space: nowrap;
   transition: transform 0.25s ease, background-color 0.25s ease, color 0.25s ease;
 }
 
 .cta-secondary:hover {
   background: var(--ink);
   color: var(--cream);
-  transform: translateY(-2px);
 }
 
 .section-label {
